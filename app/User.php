@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_admin'
     ];
 
     /**
@@ -36,4 +36,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Disable automatic timestamps.
+     */
+    public $timestamps = false;
+
+    /**
+     * Albums that belong to the user.
+     */
+    public function albums()
+    {
+        return $this->belongsToMany('App\Album');
+    }
 }
