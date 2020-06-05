@@ -12,7 +12,7 @@ class Album extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'genre'
+        'title', 'genre', 'artist_id'
     ];
 
     /**

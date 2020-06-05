@@ -20,3 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/** CMS routes */
+Route::get('/cms', 'CMSController@index')->name('cms_home');
+Route::get('/cms/artist', 'CMSController@artist')->name('cms_artist');
+Route::get('/cms/album', 'CMSController@album')->name('cms_album');
+Route::get('/cms/song', 'CMSController@song')->name('cms_song');
+
+Route::post('/cms/artist/submit', 'CMSController@artistSubmit')->name('cms_artist_submit');
+Route::post('/cms/album/submit', 'CMSController@albumSubmit')->name('cms_album_submit');
+Route::post('/cms/song/submit', 'CMSController@songSubmit')->name('cms_song_submit');

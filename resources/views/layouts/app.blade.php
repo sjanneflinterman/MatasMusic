@@ -50,6 +50,14 @@
                                 </li>
                             @endif
                         @else
+                            @if(Auth::user()->is_admin)
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link" href="{{ route('cms_home') }}" role="button">
+                                    {{ __('CMS') }}</span>
+                                </a>
+                            </li>
+                            @endif
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -74,7 +82,9 @@
         </nav>
 
         <main class="py-4">
+            <div class="container">
             @yield('content')
+            </div>
         </main>
     </div>
 </body>
