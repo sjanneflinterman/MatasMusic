@@ -18,7 +18,15 @@ class BrowseController extends Controller
         $songs = Song::where('title', 'like', $searchTerm)->get();
         $albums = Album::where('title', 'like', $searchTerm)->get();
         $artists = Artist::where('name', 'like', $searchTerm)->get();
-                
+        if($artists->first())
+        {
+            $artistAlbums = Album::where('artist_id', $artists[0]->id)->get();
+            foreach($artistAlbums as $album)
+            {
+                $albums[] = $album;
+            }
+        }
+        
         return view('browse', ['songs' => $songs,'albums' => $albums,'artists' => $artists, 'request' => $request]);
     }
 
