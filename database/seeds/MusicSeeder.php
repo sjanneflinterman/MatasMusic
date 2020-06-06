@@ -33,7 +33,7 @@ class MusicSeeder extends Seeder
         $album = App\Album::create([
             'artist_id' => $artist->id,
             'title' => 'Red',
-            'artwork' => '121324344',
+            'artwork' => '121324344.png',
             'genre' => 'Pop rock'
         ]);
         $album->fresh();
@@ -52,7 +52,7 @@ class MusicSeeder extends Seeder
         $album = App\Album::create([
             'artist_id' => $artist->id,
             'title' => 'Tallahassee',
-            'artwork' => '132242122',
+            'artwork' => '132242122.png',
             'genre' => 'Folk rock',
         ]);
         $album->fresh();

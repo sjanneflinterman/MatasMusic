@@ -29,6 +29,7 @@ class CMSController extends Controller
         }
         return view('cms');
     }
+    
     /**
      * Show the cms-artist dashboard.
      */
@@ -39,6 +40,7 @@ class CMSController extends Controller
         }
         return view('cms-artist');
     }
+
     /**
      * Show the cms-album dashboard.
      */
@@ -49,6 +51,7 @@ class CMSController extends Controller
         }
         return view('cms-album');
     }
+
     /**
      * Show the cms-song dashboard.
      */
@@ -111,6 +114,9 @@ class CMSController extends Controller
         return Redirect::back();
     }
 
+    /**
+     * Handle song post request.
+     */
     public function songSubmit(Request $request)
     {
         $validation = [];

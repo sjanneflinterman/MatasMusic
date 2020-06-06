@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="artwork" class="">{{__('Album artwork')}}</label>
+        <label for="artwork" class="">{{__('Album artwork (png)')}}</label>
         <div>
             <input id="artwork" type="file" name="artwork" data-preview="#preview">
             <img id="preview"  src="">

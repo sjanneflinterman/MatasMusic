@@ -27,7 +27,9 @@
             <h2>{{__('Songs')}}</h2>
                 <ul class="list-unstyled">
                     @foreach($songs as $song)
-                        <li>{{$song->title}}</li>
+                        <a class="link-unstyled" href="{{ route('album', ['id' => $song->album_id]) }}">
+                            <li>{{$song->title}}</li>
+                        </a>
                     @endforeach
                 </ul>
             <h2>{{__('Albums')}}</h2>
