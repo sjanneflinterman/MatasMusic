@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/browse', 'BrowseController@search')->name('search');
+Route::get('/album/{id}', 'BrowseController@album')->name('album');
 
 /** CMS routes */
 Route::get('/cms', 'CMSController@index')->name('cms_home');

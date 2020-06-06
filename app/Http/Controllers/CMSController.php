@@ -12,10 +12,21 @@ use App\Song;
 class CMSController extends Controller
 {
     /**
+     * @return boolean 
+     */
+    public function shouldRedirect()
+    {
+        return (\Auth::guest() || !\Auth::user()->is_admin);
+    }
+
+    /**
      * Show the cms dashboard.
      */
     public function index()
     {
+        if($this->shouldRedirect()){
+            return redirect('/');
+        }
         return view('cms');
     }
     /**
@@ -23,6 +34,9 @@ class CMSController extends Controller
      */
     public function artist()
     {
+        if($this->shouldRedirect()){
+            return redirect('/');
+        }
         return view('cms-artist');
     }
     /**
@@ -30,6 +44,9 @@ class CMSController extends Controller
      */
     public function album()
     {
+        if($this->shouldRedirect()){
+            return redirect('/');
+        }
         return view('cms-album');
     }
     /**
@@ -37,6 +54,9 @@ class CMSController extends Controller
      */
     public function song()
     {
+        if($this->shouldRedirect()){
+            return redirect('/');
+        }
         return view('cms-song');
     }
 
